@@ -87,7 +87,8 @@ if st.button("Submit"):
             files = {"file": (resume_file.name, resume_file.getvalue(), "application/pdf")}
             data = {"jd_text": jd_text}
 
-            response = requests.post("http://127.0.0.1:8000/upload_resume/", files=files, data=data)
+            response = requests.post("https://ai-resume-validation-1.onrender.com/upload_resume/", files=files, data=data)
+
 
             if response.status_code == 200:
                 result = response.json()
