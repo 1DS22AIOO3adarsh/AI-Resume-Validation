@@ -5,3 +5,4 @@ pytesseract
 pdf2image
 pdfminer.six
 google-generativeai
+python-multipart
