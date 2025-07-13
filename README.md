@@ -1,89 +1,99 @@
-Autonomous Hiring Agent
-Overview
+# Autonomous Hiring Agent
+
+## Overview
+
 The Autonomous Hiring Agent is an AI-powered system designed to help recruiters and candidates analyze, score, and improve résumés based on a specific job description. By leveraging advanced language models (Gemini 2.0 Flash) and an intuitive web interface, this application provides immediate feedback and actionable suggestions to strengthen résumés for targeted roles.
 
-Features
-Upload résumés in PDF format for analysis
+---
 
-Paste any job description to compare and evaluate fit
+## Features
 
-Receive a detailed fit score out of 10
+* Upload résumés in PDF format for analysis
+* Paste any job description to compare and evaluate fit
+* Receive a detailed fit score out of 10
+* Get tailored, improved bullet points to enhance the résumé
+* Beautiful, interactive web UI built with Streamlit
+* Backend powered by FastAPI and Gemini LLM for intelligent content generation
+* Live animations and downloadable improvement reports
 
-Get tailored, improved bullet points to enhance the résumé
+---
 
-Beautiful, interactive web UI built with Streamlit
+## Tech Stack
 
-Backend powered by FastAPI and Gemini LLM for intelligent content generation
+* FastAPI (backend API)
+* Google Gemini 2.0 Flash (LLM integration)
+* Streamlit (frontend interface)
+* Python (core language)
+* Render (backend deployment)
+* Streamlit Cloud (frontend deployment)
 
-Live animations and downloadable improvement reports
+---
 
-Tech Stack
-FastAPI (backend API)
+## Live Demo
 
-Google Gemini 2.0 Flash (LLM integration)
+* [Live App (Streamlit Frontend)](https://ai-resume-validation-54kmmowripkhxetndr2fib.streamlit.app/)
+* [Backend API (FastAPI Docs)](https://ai-resume-validation-1.onrender.com/docs)
 
-Streamlit (frontend interface)
+---
 
-Python (core language)
+## How it Works
 
-Render (backend deployment)
+1. **Upload a Résumé**
+   Upload your résumé in PDF format through the Streamlit frontend.
 
-Streamlit Cloud (frontend deployment)
+2. **Paste Job Description**
+   Copy and paste the job description for the role you are targeting.
 
-Live Demo
-Live App (Streamlit Frontend)
+3. **Get Score and Suggestions**
+   The system evaluates the résumé against the job description using Gemini 2.0 Flash, returns a fit score out of 10, and suggests bullet points to improve alignment.
 
-Backend API (FastAPI Docs)
+4. **Download and Apply Changes**
+   Download the improvement suggestions as a text file and update your résumé accordingly.
 
-How it Works
-Upload a Résumé
-Upload your résumé in PDF format through the Streamlit frontend.
+---
 
-Paste Job Description
-Copy and paste the job description for the role you are targeting.
+## Deployment
 
-Get Score and Suggestions
-The system evaluates the résumé against the job description using Gemini 2.0 Flash, returns a fit score out of 10, and suggests bullet points to improve alignment.
+### Backend
 
-Download and Apply Changes
-Download the improvement suggestions as a text file and update your résumé accordingly.
+* Hosted on Render
+* URL: [Backend API](https://ai-resume-validation-1.onrender.com/docs)
+* Start command:
 
-Deployment
-Backend
-Hosted on Render
+  ```
+  uvicorn app.main:app --host 0.0.0.0 --port 10000
+  ```
 
-URL: Backend API
+### Frontend
 
-Start command:
+* Hosted on Streamlit Cloud
+* Connects to Render backend via HTTPS
 
-nginx
-Copy
-Edit
-uvicorn app.main:app --host 0.0.0.0 --port 10000
-Frontend
-Hosted on Streamlit Cloud
+---
 
-Connects to Render backend via HTTPS
+## Running Locally
 
-Running Locally
-Backend
-bash
-Copy
-Edit
+### Backend
+
+```bash
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-Frontend
-bash
-Copy
-Edit
+```
+
+### Frontend
+
+```bash
 pip install streamlit requests
 streamlit run frontend.py
-Update frontend.py to point to your local backend URL if testing locally.
+```
 
-Folder Structure
-css
-Copy
-Edit
+Update `frontend.py` to point to your local backend URL if testing locally.
+
+---
+
+## Folder Structure
+
+```
 .
 ├── app/
 │   ├── main.py
@@ -94,16 +104,21 @@ Edit
 ├── requirements.txt
 ├── README.md
 └── ...
-Contributing
+```
+
+---
+
+## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change or improve.
 
-License
-This project is open source and available under the MIT License.
 
-Acknowledgements
-Google Gemini API for LLM-based content analysis
+---
 
-Streamlit for rapid UI development
+## Acknowledgements
 
-Render and Streamlit Cloud for smooth deployment experience
+* Google Gemini API for LLM-based content analysis
+* Streamlit for rapid UI development
+* Render and Streamlit Cloud for smooth deployment experience
 
+---
